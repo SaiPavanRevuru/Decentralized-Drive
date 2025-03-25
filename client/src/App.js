@@ -28,14 +28,13 @@ function App() {
         const signer = provider.getSigner();
         const address = await signer.getAddress();
         setAccount(address);
-        const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
+        let contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"; //the contract address will keep changing for every run
 
         const contract = new ethers.Contract(
           contractAddress,
           Upload.abi,
           signer,
         );
-        // console.log(contract);
         setContract(contract);
         setProvider(provider);
       } else {
@@ -56,7 +55,7 @@ function App() {
       )}
 
       <div className="App">
-        <h1 style={{ color: "white" }}>Decentralized Drive</h1>
+        <h1 style={{ color: "white" }}>Gdrive 3.0</h1>
         <div class="bg"></div>
         <div class="bg bg2"></div>
         <div class="bg bg3"></div>

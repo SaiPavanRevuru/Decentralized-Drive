@@ -20,15 +20,15 @@ const Display = ({ contract, account }) => {
     if (!isEmpty) {
       const str = dataArray.toString();
       const str_array = str.split(",");
-      console.log(str);
-      console.log(str_array);
+      // console.log(str);
+      // console.log(str_array);
       const images = str_array.map((item, i) => {
         return (
           <a href={item} key={i} target="_blank" rel="noreferrer">
             <img
               key={i}
               src={`https://gateway.pinata.cloud/ipfs/${item.substring(6)}`}
-              alt={`image${i+1}`}
+              alt={`Img ${i+1}`}
               className="image-list"
             ></img>
           </a>
